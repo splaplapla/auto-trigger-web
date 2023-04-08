@@ -21,5 +21,5 @@ end
 group :development do
   gem "web-console"
   gem "pry"
+  gem "rspec-rails"
 end
-
