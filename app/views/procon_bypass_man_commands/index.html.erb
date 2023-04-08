@@ -18,6 +18,7 @@
         repeat_count
       </th>
       <th></th>
+      <th></th>
     </tr>
 
     <% @procon_bypass_man_commands.each do |procon_bypass_man_command| %>
@@ -36,6 +37,9 @@
         </td>
         <td>
           <%= link_to 'edit', edit_procon_bypass_man_command_path(procon_bypass_man_command) %>
+        </td>
+        <td>
+          <%= link_to 'テスト送信', procon_bypass_man_command_remote_commands_path(procon_bypass_man_command), method: :post, data: { remote: true } %>
         </td>
       </tr>
     <% end %>

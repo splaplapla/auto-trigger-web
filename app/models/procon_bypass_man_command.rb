@@ -4,7 +4,7 @@ class ProconBypassManCommand < ApplicationRecord
   # TODO: スペースは容認しつつ、カンマ区切りかつ、存在しないボタンをブロックするバリデーションを入れる
 
   # TODO: カラムの中身を, でsplitしたほうがいいかも
-  def to_commands_as_remote
+  def to_buttons_as_remote
     repeat_count.times.reduce([]){ |a, item|
       a.push(first_buttons)
       a.push(second_buttons) if second_buttons.present?
