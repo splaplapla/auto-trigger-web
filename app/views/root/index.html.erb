@@ -32,10 +32,13 @@
   </div>
   <div class="actions">
     <% if Setting.instance.capture_enabled %>
-    <%= form.submit '⏸️画面キャプチャと画像解析を停止する' %>
-  <% else %>
-    <%= form.submit '▶️画面キャプチャと画像解析を開始する' %>
-  <% end %>
+      <div class="submit-loader-wrapper">
+        <div class='loader'></div>
+        <%= form.submit '⏸️ 画面キャプチャと画像解析を停止する' %>
+      </div>
+    <% else %>
+      <%= form.submit '▶️ 画面キャプチャと画像解析を開始する' %>
+    <% end %>
   </div>
 <% end %>
 
