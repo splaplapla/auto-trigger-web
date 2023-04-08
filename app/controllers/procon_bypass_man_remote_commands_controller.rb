@@ -1,4 +1,4 @@
-class ProconBypassManCommandsController < ApplicationController
+class ProconBypassManRemoteCommandsController < ApplicationController
   def create
     setting = Setting.instance
 

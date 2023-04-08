@@ -1,0 +1,2 @@
+class ProconBypassManCommand < ApplicationRecord
+end
