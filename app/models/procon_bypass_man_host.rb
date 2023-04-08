@@ -1,4 +1,6 @@
 class ProconBypassManHost < ApplicationRecord
+  validates :name, :port, presence: true
+
   # @return [ProconBypassManTcpClient]
   def self.client
     raise('must have a procon_bypass_man_host') if procon_bypass_man_host.nil?

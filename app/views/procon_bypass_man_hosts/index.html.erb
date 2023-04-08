@@ -1,0 +1,37 @@
+<%= link_to '新規作成する', new_procon_bypass_man_host_path %>
+
+<% if @procon_bypass_man_hosts.empty? %>
+  <p>procon_bypass_man_hostの登録がありません</p>
+<% else %>
+  <table border=1>
+    <tr>
+      <th>
+        hostname
+      </th>
+      <th>
+        port
+      </th>
+      <th>
+        note
+      </th>
+      <th></th>
+    </tr>
+
+    <% @procon_bypass_man_hosts.each do |procon_bypass_man_host| %>
+      <tr>
+        <td>
+          <%= procon_bypass_man_host.name %>
+        </td>
+        <td>
+          <%= procon_bypass_man_host.port %>
+        </td>
+        <td>
+          <%= simple_format procon_bypass_man_host.note %>
+        </td>
+        <td>
+          <%= link_to 'edit', edit_procon_bypass_man_host_path(procon_bypass_man_host) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
