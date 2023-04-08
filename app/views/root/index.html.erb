@@ -25,7 +25,20 @@
 
 
 <p>
-<input type=button value='画面キャプチャと画像解析を開始する'>
+
+<%= form_with(model: Setting.instance, local: true, html: { class: 'form-horizontal' }) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :capture_enabled, value: !Setting.instance.capture_enabled %>
+  </div>
+  <div class="actions">
+    <% if Setting.instance.capture_enabled %>
+    <%= form.submit '⏸️画面キャプチャと画像解析を停止する' %>
+  <% else %>
+    <%= form.submit '▶️画面キャプチャと画像解析を開始する' %>
+  <% end %>
+  </div>
+<% end %>
+
 </p>
 
 
