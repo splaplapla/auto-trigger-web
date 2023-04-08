@@ -37,7 +37,10 @@
         <%= form.submit '⏸️ 画面キャプチャと画像解析を停止する' %>
       </div>
     <% else %>
-      <%= form.submit '▶️ 画面キャプチャと画像解析を開始する' %>
+      <div class="submit-loader-wrapper">
+        <div class='stopped-loader'></div>
+        <%= form.submit '▶️ 画面キャプチャと画像解析を開始する' %>
+      </div>
     <% end %>
   </div>
 <% end %>
