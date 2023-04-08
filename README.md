@@ -1,24 +1,22 @@
 # README
+* 本ツールは、PBMへボタン入力をするためのWEBアプリケーションです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 必要なソフトウェア
+* MacOS
+  * Windowsでもたぶん動きますが動作確認はしていません
+* ruby3.x
+* sqlite3
 
-Things you may want to cover:
+## インストール
+* bundle install
+* bin/rails db:create db:migrate
 
-* Ruby version
+## 使い方
+TODO
 
-* System dependencies
+## 開発
+TODO
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODO
+* Dockerで起動する？
+  * 画像キャプチャはコンテナからできるか？
