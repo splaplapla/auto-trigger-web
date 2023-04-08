@@ -9,8 +9,10 @@
   * Windowsでもたぶん動きますが動作確認はしていません
 * ruby3.x
 * sqlite3
+* OpenCV 2.x
 
 ## 使い方
+* OpenCV 2.xのインストール
 * 起動方法
     * `bin/start_server`
 * 画面
