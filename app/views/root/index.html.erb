@@ -27,7 +27,7 @@
   <li>PBMへ入力を行う</li>
   <ul>
     <li>
-      <%= [:y, :x, :b, :a, :sl, :sr, :r, :zr, :minus, :plus, :thumbr, :thumbl, :home, :cap, :down, :up, :right, :left, :l, :zl].map { |x| "<input type=button value=#{x}>" }.join.html_safe %>
+      <%= Procon::BUTTONS.map { |x| "<input type=button value=#{x}>" }.join.html_safe %>
     </li>
   </ul>
   <li>画面キャプチャを行う</li>
