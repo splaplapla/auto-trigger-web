@@ -13,7 +13,7 @@
 送信先PBM: <input type=text><input type=button value='保存'>
 </p>
 
-<!-- TODO: 処理中はcheckboxをロックする  >
+<!-- TODO: 処理中はcheckboxをロックする -->
 <input type=checkbox >[ブキ(チャージャー)のが標的にあったら] - [射撃ボタンを離す]<br>
 <input type=checkbox >[ブキ(シューター)が標的にあったら] - [射撃ボタンを連打する]<br>
 
@@ -29,7 +29,7 @@
   <li>PBMへ入力を行う</li>
   <ul>
     <li>
-      <%= Procon::BUTTONS.map { |x| link_to(x, '', class: 'button-like', data: { remote: true }, method: :post) }.join.html_safe %>
+      <%= Procon::BUTTONS.map { |x| link_to(x, procon_bypass_man_commands_path(buttons: [x]), class: 'button-like', data: { remote: true }, method: :post) }.join.html_safe %>
     </li>
   </ul>
   <li>画面キャプチャを行う</li>
