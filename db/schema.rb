@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_120454) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_141659) do
+  create_table "command_rules", force: :cascade do |t|
+    t.string "condition_key", null: false
+    t.string "condition_name", null: false
+    t.integer "procon_bypass_man_command_id"
+    t.boolean "enabled", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "procon_bypass_man_commands", force: :cascade do |t|
     t.string "name", null: false
     t.string "first_buttons", null: false

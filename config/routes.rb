@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :procon_bypass_man_commands, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :procon_bypass_man_hosts, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :command_rules, only: [:update, :destroy]
 end
