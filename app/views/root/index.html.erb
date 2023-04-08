@@ -1,0 +1,34 @@
+<%= link_to 'PBMを一覧を表示する', '' %>, <%= link_to '解析に一致した時に実行するアクション一覧', '' %>
+
+<hr>
+
+<% if ProconBypassManHost.all.empty? %>
+  <p>
+  ProconBypassManHostの登録がありません。ProconBypassManHostを登録してください。
+  </p>
+<% end %>
+
+<p>
+キャプチャデバイス名: <input type=text>
+</p>
+
+<input type=checkbox >[ブキ(チャージャー)のが標的にあったら] - [射撃ボタンを離す]<br>
+<input type=checkbox >[ブキ(シューター)が標的にあったら] - [射撃ボタンを離す]<br>
+
+
+<p>
+<input type=button value='画面キャプチャと画像解析を開始する'>
+</p>
+
+
+<h3>動作確認</h3>
+
+<ul>
+  <li>PBMへ入力を行う</li>
+  <ul>
+    <li>
+      <%= [:y, :x, :b, :a, :sl, :sr, :r, :zr, :minus, :plus, :thumbr, :thumbl, :home, :cap, :down, :up, :right, :left, :l, :zl].map { |x| "<input type=button value=#{x}>" }.join.html_safe %>
+    </li>
+  </ul>
+  <li>画面キャプチャを行う</li>
+</ul>

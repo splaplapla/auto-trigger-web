@@ -1,0 +1,6 @@
+#!/bin/bash
+
+be rails db:create db:migrate
+bundle check || bundle install
+
+bundle exec foreman s

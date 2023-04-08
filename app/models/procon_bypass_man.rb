@@ -1,2 +1,0 @@
-class ProconBypassManHost < ApplicationRecord
-end

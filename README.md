@@ -10,17 +10,17 @@
 * ruby3.x
 * sqlite3
 
-## インストール
-* bundle install
-* bin/rails db:create db:migrate
-
 ## 使い方
 * 起動方法
+    * `bin/start_server`
 * 画面
     * TODO
 
 ## 開発
-TODO
+### インストール
+* bundle install
+* bin/rails db:create db:migrate
+* bin/dev
 
 ## TODO
 * Dockerで起動する？
