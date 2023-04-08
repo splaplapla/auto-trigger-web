@@ -1,12 +1,22 @@
 <% if ProconBypassManHost.all.empty? %>
   <p>
-  ProconBypassManHostの登録がありません。ProconBypassManHostを登録してください。
+    ProconBypassManHostの登録がありません。ProconBypassManHostを登録してください。
   </p>
 <% end %>
 
 <p>
 キャプチャデバイス名: <input type=text><input type=button value='保存'><br>
-送信先PBM: <input type=text><input type=button value='保存'>
+
+<%= form_with(model: Setting.instance, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :procon_bypass_man_host_id, '送信先PBM' %>
+    <%= form.select :procon_bypass_man_host_id, ProconBypassManHost.all.collect { |host| [host.name, host.id] }, prompt: 'Select a ProconBypassManHost' %>
+  </div>
+  <div class="actions">
+    <%= form.submit '保存' %>
+  </div>
+<% end %>
+
 </p>
 
 <!-- TODO: 処理中はcheckboxをロックする -->

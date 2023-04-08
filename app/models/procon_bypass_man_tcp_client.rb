@@ -2,12 +2,16 @@ class ProconBypassManTcpClient
   # @param [String] hostname
   # @param [Integer] port
   def initialize(hostname: , port: )
-    procon_bypass_man_host.port
     @socket = TCPSocket.new(hostname, port) # TODO: キャッシュする
   end
 
-  # @return [String]
+  # @param [Array<String>] buttons
+  # @return [String] response
   def send_command(buttons: )
-    { buttons: buttons }.to_json
+    message = { buttons: buttons }.to_json
+    @socket.write(message)
+    command_response = @socket.gets
+    @socket.close
+    command_response
   end
 end

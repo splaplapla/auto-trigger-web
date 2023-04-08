@@ -22,8 +22,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_083022) do
   create_table "settings", force: :cascade do |t|
     t.integer "procon_bypass_man_host_id"
     t.string "capture_device_name"
+    t.boolean "capture_enabled", default: false, null: false
+    t.string "unique_key", default: "setting"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["unique_key"], name: "index_settings_on_unique_key", unique: true
   end
 
 end

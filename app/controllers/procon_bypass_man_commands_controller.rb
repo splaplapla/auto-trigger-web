@@ -2,11 +2,13 @@ class ProconBypassManCommandsController < ApplicationController
   def create
     setting = Setting.instance
 
-    if setting.procon_bypass_man_host.nil?
+    if(procon_bypass_man_host = Setting.instance.procon_bypass_man_host).nil?
       render :bad_request
       return
     end
 
-    ProconBypassManHost.client.send_command(buttons: params[:buttons])
+    command_response = procon_bypass_man_host.client.send_command(buttons: params[:buttons])
+    Rails.logger.info { command_response }
+    head :ok
   end
 end
