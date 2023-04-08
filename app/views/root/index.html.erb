@@ -7,10 +7,10 @@
 <p>
 キャプチャデバイス名: <input type=text><input type=button value='保存'><br>
 
-<%= form_with(model: Setting.instance, local: true) do |form| %>
+<%= form_with(model: Setting.instance, local: true, html: { class: 'form-horizontal' }) do |form| %>
   <div class="field">
     <%= form.label :procon_bypass_man_host_id, '送信先PBM' %>
-    <%= form.select :procon_bypass_man_host_id, ProconBypassManHost.all.collect { |host| [host.name, host.id] }, prompt: 'Select a ProconBypassManHost' %>
+    <%= form.select :procon_bypass_man_host_id, ProconBypassManHost.all.collect { |host| [host.name, host.id] }, { prompt: 'Select a ProconBypassManHost' } %>
   </div>
   <div class="actions">
     <%= form.submit '保存' %>

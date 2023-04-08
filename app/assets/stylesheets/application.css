@@ -31,11 +31,19 @@
   background-color: #337ab7;
   border-color: #2e6
 }
-.button-like:hover,
-.button-like:focus,
-.button-like:active {
+
+.button-like:hover, .button-like:focus, .button-like:active {
   background-color: #286090;
   border-color: #204d74;
   color: #fff;
   text-decoration: none;
+}
+
+.form-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.form-horizontal .field, .form-horizontal .actions {
+  margin-right: 1rem;
 }
