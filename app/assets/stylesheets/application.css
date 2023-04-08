@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.button-like {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6
+}
+.button-like:hover,
+.button-like:focus,
+.button-like:active {
+  background-color: #286090;
+  border-color: #204d74;
+  color: #fff;
+  text-decoration: none;
+}
