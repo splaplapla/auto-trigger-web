@@ -1,0 +1,43 @@
+<%= link_to '新規作成する', new_procon_bypass_man_command_path %>
+
+<% if @procon_bypass_man_commands.empty? %>
+  <p>procon_bypass_man_commandの登録がありません</p>
+<% else %>
+  <table border=1>
+    <tr>
+      <th>
+        hostname
+      </th>
+      <th>
+        first buttons
+      </th>
+      <th>
+        seconds buttons
+      </th>
+      <th>
+        repeat_count
+      </th>
+      <th></th>
+    </tr>
+
+    <% @procon_bypass_man_commands.each do |procon_bypass_man_command| %>
+      <tr>
+        <td>
+          <%= procon_bypass_man_command.name %>
+        </td>
+        <td>
+          <%= procon_bypass_man_command.first_buttons %>
+        </td>
+        <td>
+          <%= procon_bypass_man_command.second_buttons %>
+        </td>
+        <td>
+          <%= procon_bypass_man_command.repeat_count %>
+        </td>
+        <td>
+          <%= link_to 'edit', edit_procon_bypass_man_command_path(procon_bypass_man_command) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

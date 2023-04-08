@@ -13,7 +13,9 @@
 ActiveRecord::Schema[7.0].define(version: 2023_04_08_120454) do
   create_table "procon_bypass_man_commands", force: :cascade do |t|
     t.string "name", null: false
-    t.string "buttons", null: false
+    t.string "first_buttons", null: false
+    t.string "second_buttons"
+    t.integer "repeat_count", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

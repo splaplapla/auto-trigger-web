@@ -1,0 +1,37 @@
+<%= form_with(model: @procon_bypass_man_command, local: true) do |form| %>
+  <% if @procon_bypass_man_command.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@procon_bypass_man_command.errors.count, "error") %> prohibited this procon_bypass_man_command from being saved:</h2>
+      <ul>
+        <% @procon_bypass_man_command.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_buttons %>
+    <%= form.text_field :first_buttons %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_buttons %>
+    <%= form.text_field :second_buttons %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :repeat_count %>
+    <%= form.number_field :repeat_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
