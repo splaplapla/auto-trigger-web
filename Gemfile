@@ -6,6 +6,7 @@ ruby "3.2.2"
 gem "rails"
 gem "sprockets-rails"
 gem 'importmap-rails'
+gem 'stimulus-rails'
 gem "sqlite3"
 gem "puma", "~> 5.0"
 gem "jbuilder"

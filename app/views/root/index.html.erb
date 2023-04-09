@@ -60,7 +60,10 @@
   <li>PBMへ入力を行う</li>
   <ul>
     <li>
-      <%= Procon::BUTTONS.map { |x| link_to(x, procon_bypass_man_remote_single_commands_path(buttons: [x]), class: 'button-like', data: { remote: true }, method: :post) }.join.html_safe %>
+      <div style='display: none'>
+        <%= Procon::BUTTONS.map { |x| link_to(x, procon_bypass_man_remote_single_commands_path(buttons: [x]), class: 'button-like', data: { remote: true, remote_single_command: x }, method: :post) }.join.html_safe %>
+      </div>
+      <div data-controller='single-commander-procon'></div>
     </li>
   </ul>
   <li>画面キャプチャを行う</li>

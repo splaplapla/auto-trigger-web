@@ -181,6 +181,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.2-arm64-darwin)
+    stimulus-rails (1.2.1)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -211,6 +213,7 @@ DEPENDENCIES
   rspec-rails
   sprockets-rails
   sqlite3
+  stimulus-rails
   tzinfo-data
   web-console
 
