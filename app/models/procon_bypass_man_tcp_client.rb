@@ -11,7 +11,7 @@ class ProconBypassManTcpClient
     message = { buttons: buttons }.to_json
     @socket.write(message)
     command_response = @socket.gets
-    @socket.close
+    # @socket.close # 接続をキャッシュしているのでcloseしない
     command_response
   end
 end
