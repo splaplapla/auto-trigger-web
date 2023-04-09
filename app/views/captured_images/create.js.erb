@@ -1,0 +1,5 @@
+<% if @base64_encoded_image %>
+    document.getElementById("captured-image").src = "data:image/png;base64,<%= @base64_encoded_image %>";
+<% end %>
+
+document.getElementById("captured-image-log").innerText = "<%= @error || '' %>";

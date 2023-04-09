@@ -69,5 +69,11 @@
       結果: <span id='single-command-result'></span>
     </li>
   </ul>
-  <li>画面キャプチャを行う</li>
+  <li><%= link_to '画面キャプチャを行う', captured_images_path, method: :post, data: { remote: true } %></li>
+  <ul>
+    <li>
+      <img id="captured-image" />
+      <div id="captured-image-log"></div>
+    </li>
+  </ul>
 </ul>
