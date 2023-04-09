@@ -1,3 +1,9 @@
+PATH
+  remote: ../procon_bypass_man_commander-splatoon3
+  specs:
+    procon_bypass_man_commander-splatoon3 (0.1.0)
+      ropencv
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,6 +85,7 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    ffi (1.15.5)
     foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -154,8 +161,13 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rbind (0.0.35)
+      ffi (~> 1.9, >= 1.9.0)
     reline (0.3.3)
       io-console (~> 0.5)
+    ropencv (0.0.38)
+      ffi (>= 1.9.0)
+      rbind (>= 0.0.35)
     rspec-core (3.12.1)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.2)
@@ -207,18 +219,17 @@ DEPENDENCIES
   foreman
   importmap-rails
   jbuilder
+  procon_bypass_man_commander-splatoon3!
   pry
   puma (~> 5.0)
   rails
+  ropencv
   rspec-rails
   sprockets-rails
   sqlite3
   stimulus-rails
   tzinfo-data
   web-console
-
-RUBY VERSION
-   ruby 3.2.2p53
 
 BUNDLED WITH
    2.2.22

@@ -13,6 +13,7 @@
 
 ## 使い方
 * OpenCV 2.xのインストール
+    * `brew install opencv@3`
 * 起動方法
     * `bin/start_server`
 * 画面
