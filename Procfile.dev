@@ -1,1 +1,2 @@
 web: bundle exec rails server
+runner: bundle exec rails r 'Commander.new.run'
