@@ -1,7 +1,7 @@
 class CapturedImagesController < ApplicationController
   def create
-    device_index = 1
-    size = '640x360'
+    device_index = 0
+    size = Camera::TARGET_SIZE
 
     @base64_encoded_image = nil
     Tempfile.new(['', '.png']).tap do |file|
