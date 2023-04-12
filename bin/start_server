@@ -1,6 +1,7 @@
 #!/bin/bash
 
-be rails db:create db:migrate
-bundle check || bundle install
+RAILS_ENV=production bundle exec rails db:create db:migrate
+bundle check || bundle install --without development test
 
+RAILS_ENV=production bundle exec rails assets:precompile
 bundle exec foreman s

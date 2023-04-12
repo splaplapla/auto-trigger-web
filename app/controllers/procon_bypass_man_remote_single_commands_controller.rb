@@ -3,7 +3,7 @@ class ProconBypassManRemoteSingleCommandsController < ApplicationController
     setting = Setting.instance
 
     if(procon_bypass_man_host = Setting.instance.procon_bypass_man_host).nil?
-      render :bad_request
+      @result = "ERROR: 送信先のprocon_bypass_man_hostが未設定です"
       return
     end
 
