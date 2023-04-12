@@ -5,6 +5,9 @@
 #     * 補足した画像を書き込む
 #   * CAPTURE_ANOTHER_SIZE
 #     * 別サイズで画像を保存する
+#
+# * cleanup
+#  * rm -rf tmp/detected_images/*.png
 
 class Commander
   def initialize
