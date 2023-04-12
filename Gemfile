@@ -14,11 +14,6 @@ gem "foreman"
 gem "procon_bypass_man_commander-splatoon3", github: 'splaplapla/procon_bypass_man_commander-splatoon3', branch: :master
 gem "ropencv" # 3.2だと動かないっぽいので3.0を使っている
 
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
-
 group :development do
   gem "web-console"
   gem "pry"
