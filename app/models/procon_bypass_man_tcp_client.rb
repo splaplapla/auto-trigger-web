@@ -9,10 +9,10 @@ class ProconBypassManTcpClient
   # @return [Boolean]
   def send_command(buttons: )
     message = { buttons: buttons }.to_json
-    Post.benchmark("ProconBypassManTcpClient#send_command with #{message}") do
+    Rails.benchmark("ProconBypassManTcpClient#send_command with #{message}") do
       @socket.write(message)
     end
-    # command_response = @socket.gets # PBMの設定でレスポンスを送らないようにしたので読み取らない
+    command_response = @socket.gets
     # @socket.close # 接続をキャッシュしているのでcloseしない
     true
   end
