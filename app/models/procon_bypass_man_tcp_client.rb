@@ -9,10 +9,10 @@ class ProconBypassManTcpClient
   # @return [Boolean]
   def send_command(buttons: )
     message = { buttons: buttons }.to_json
-    Rails.benchmark("ProconBypassManTcpClient#send_command with #{message}") do
+    Rails.benchmark("[BENCHMARK] ProconBypassManTcpClient#send_command with #{message}") do
       @socket.write(message)
+      command_response = @socket.gets # TODO: これをやめたい
     end
-    command_response = @socket.gets
     # @socket.close # 接続をキャッシュしているのでcloseしない
     true
   end
