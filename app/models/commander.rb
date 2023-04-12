@@ -40,6 +40,8 @@ class Commander
       frame = OpenCV::cv::Mat.new
       width, height = Camera::TARGET_SIZE.split('x').map(&:to_i)
 
+      # TODO: 1秒間に何回実行しているかをみたい
+      # TODO: 同じ画像をframeに書き出していないかハッシュ値を使ってチェックしたい
       while video_file.read(frame) && @capture_enabled
         OpenCV::cv::resize(frame, frame, OpenCV::cv::Size.new(width, height))
         # TODO: 360pでできないか検討する
