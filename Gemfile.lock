@@ -1,5 +1,7 @@
-PATH
-  remote: ../procon_bypass_man_commander-splatoon3
+GIT
+  remote: https://github.com/splaplapla/procon_bypass_man_commander-splatoon3.git
+  revision: f16100642842ad81239d78dcdd8a0e43c5347c87
+  branch: master
   specs:
     procon_bypass_man_commander-splatoon3 (0.1.0)
       ropencv
