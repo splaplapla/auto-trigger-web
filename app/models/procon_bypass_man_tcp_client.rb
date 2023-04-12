@@ -6,12 +6,14 @@ class ProconBypassManTcpClient
   end
 
   # @param [Array<String>] buttons
-  # @return [String] response
+  # @return [Boolean]
   def send_command(buttons: )
     message = { buttons: buttons }.to_json
-    @socket.write(message)
-    command_response = @socket.gets
+    Post.benchmark("ProconBypassManTcpClient#send_command with #{message}") do
+      @socket.write(message)
+    end
+    # command_response = @socket.gets # PBMの設定でレスポンスを送らないようにしたので読み取らない
     # @socket.close # 接続をキャッシュしているのでcloseしない
-    command_response
+    true
   end
 end
