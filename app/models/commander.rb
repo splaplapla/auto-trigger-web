@@ -21,11 +21,11 @@ class Commander
       end
 
       def total
-        @table.values.sum
+        @table.values.sum.floor(3)
       end
 
       def inspect
-        @table
+        @table.merge(total: total)
       end
     end
 
@@ -51,7 +51,7 @@ class Commander
     private
 
     def update_statistics(spans)
-      puts "Processed per second: #{spans.size}, Max time: #{spans.max_by(&:total).inspect}, Min time: #{spans.max_by(&:total).total}"
+      puts "Processed per second: #{spans.size}, Max time: #{spans.max_by(&:total).inspect}, Min time: #{spans.min_by(&:total).inspect}"
     end
   end
 
