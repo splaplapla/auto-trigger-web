@@ -93,6 +93,7 @@ class Commander
           measurement.measure('read video_file') do
             video_file.read(frame)
           end
+          next if frame.empty # cameraデバイスが繋がっていなくて書き込めない場合がある
 
           measurement.measure('resize frame') do
             OpenCV::cv::resize(frame, frame, OpenCV::cv::Size.new(width, height))
