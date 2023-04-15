@@ -81,9 +81,9 @@ class Commander
       Rails.logger.info '処理を開始します'
 
       @capture_enabled = true
-      procon_bypass_man_host = Setting.instance.procon_bypass_man_host
-
-      video_file = OpenCV::cv::VideoCapture.new(0)
+      setting = Setting.instance
+      procon_bypass_man_host = setting.procon_bypass_man_host
+      video_file = OpenCV::cv::VideoCapture.new(setting.capture_device_name)
       frame = OpenCV::cv::Mat.new
       width, height = Camera::TARGET_SIZE.split('x').map(&:to_i)
 

@@ -1,6 +1,6 @@
 class CapturedImagesController < ApplicationController
   def create
-    device_index = 0
+    device_index = Setting.instance.capture_device_name
     size = Camera::TARGET_SIZE
 
     @base64_encoded_image = nil
