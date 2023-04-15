@@ -4,43 +4,35 @@
   </p>
 <% end %>
 
+<% if Setting.instance.capture_device_name.blank? %>
+  <p>
+    キャプチャデバイスのインデックス番号が未登録です。登録してください。
+  </p>
+<% end %>
+
 <p>
-<%= form_with(model: setting, local: true, html: { class: 'form-horizontal' }) do |form| %>
-  <div class="field">
-    <%= form.label :capture_device_name, 'キャプチャデバイスのインデックス番号' %>
-    <%= form.text_field :capture_device_name %>
-  </div>
-  <div class="actions">
-    <%= form.submit '保存' %>
-  </div>
-<% end %>
-</p>
-
-
-<%= form_with(model: setting, local: true, html: { class: 'form-horizontal' }) do |form| %>
-  <div class="field">
-    <%= form.label :procon_bypass_man_host_id, '送信先PBM' %>
-    <%= form.select :procon_bypass_man_host_id, ProconBypassManHost.all.collect { |host| [host.name, host.id] }, { prompt: 'Select a ProconBypassManHost' } %>
-  </div>
-  <div class="actions">
-    <%= form.submit '保存' %>
-  </div>
-<% end %>
-
-</p>
-
-<%# TODO: selectboxを変更したら、保存ボタンを押さずに、即時保存をしてほしい %>
-<!-- TODO: 処理中はcheckboxをロックする -->
-<% CommandRule.all.each do |command_rule| %>
-  <%= form_with(model: command_rule, local: true, html: { class: 'form-horizontal' }) do |form| %>
-    <label for="<%= dom_id(command_rule) %>">
-      <%= form.check_box :enabled, id: dom_id(command_rule) %>
-      <%= command_rule.condition_name %>
-    </label>
-    <span style='margin-right: 5px; margin-left: 5px'>=></span> <%= form.select :procon_bypass_man_command_id, ProconBypassManCommand.all.collect { |cmd| [cmd.name, cmd.id] }, { prompt: 'Select a ProconBypassManCommand' } %>
-    <%= form.submit '保存する' %>
+  <%= form_with(model: setting, local: true, html: { class: 'form-horizontal' }) do |form| %>
+    <div class="field">
+      <%= form.label :capture_device_name, 'キャプチャデバイスのインデックス番号' %>
+      <%= form.text_field :capture_device_name %>
+    </div>
+    <div class="actions">
+      <%= form.submit '保存' %>
+    </div>
   <% end %>
-<% end %>
+</p>
+
+<p>
+  <%= form_with(model: setting, local: true, html: { class: 'form-horizontal' }) do |form| %>
+    <div class="field">
+      <%= form.label :procon_bypass_man_host_id, '送信先PBM' %>
+      <%= form.select :procon_bypass_man_host_id, ProconBypassManHost.all.collect { |host| [host.name, host.id] }, { prompt: 'Select a ProconBypassManHost' } %>
+    </div>
+    <div class="actions">
+      <%= form.submit '保存' %>
+    </div>
+  <% end %>
+</p>
 
 <p>
   <%= form_with(model: setting, local: true, html: { class: 'form-horizontal' }) do |form| %>
