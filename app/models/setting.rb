@@ -5,4 +5,8 @@ class Setting < ApplicationRecord
   def self.instance
     Setting.last || Setting.create
   end
+
+  def capture_device_name
+    super.to_i
+  end
 end
