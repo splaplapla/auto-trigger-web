@@ -11,6 +11,6 @@ class ProconBypassManRemoteSingleCommandsController < ApplicationController
     Rails.logger.info { command_response }
     @result = command_response
   rescue => e
-    @result = "ERROR: #{e}"
+    @result = "ERROR: #{e.message}(#{e})"
   end
 end

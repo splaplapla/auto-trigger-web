@@ -8,7 +8,7 @@ class ProconBypassManHost < ApplicationRecord
     client_key = [name, port].join
     self.client_table ||= {}
     self.client_table[client_key] ||= ProconBypassManTcpClient.new(hostname: name, port: port)
-  rescue IOError # closeされた接続を使いまわそうとした時
+  rescue IOError, Errno::EPIPE
     self.client_table[client_key] = nil
     retry
   end
