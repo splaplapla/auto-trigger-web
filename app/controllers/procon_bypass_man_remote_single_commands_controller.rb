@@ -7,10 +7,11 @@ class ProconBypassManRemoteSingleCommandsController < ApplicationController
       return
     end
 
-    command_response = procon_bypass_man_host.client.send_command(buttons: params[:buttons])
+    command_response = procon_bypass_man_host.send_command(buttons: params[:buttons])
     Rails.logger.info { command_response }
     @result = command_response
   rescue => e
+    Rails.logger.error { e }
     @result = "ERROR: #{e.message}(#{e})"
   end
 end

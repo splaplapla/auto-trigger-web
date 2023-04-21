@@ -106,7 +106,7 @@ class Commander
 
           measurement.measure('send_command to client') do
             if result # TODO: load detect class
-              procon_bypass_man_host.client.send_command(buttons: ['unzr'])
+              procon_bypass_man_host.send_command(buttons: ['unzr'])
 
               if ENV['SAVE_DETECTED_IMAGE']
                 time = Time.now

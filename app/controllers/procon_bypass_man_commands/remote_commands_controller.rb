@@ -8,7 +8,7 @@ class ProconBypassManCommands::RemoteCommandsController < ApplicationController
     end
 
     ProconBypassManCommand.find(params[:procon_bypass_man_command_id]).to_buttons_as_remote.each do |buttons|
-      command_response = procon_bypass_man_host.client.send_command(buttons: Array.wrap(buttons))
+      command_response = procon_bypass_man_host.send_command(buttons: Array.wrap(buttons))
       Rails.logger.info { command_response } # TODO: commandとresponseを併記する
     end
 
