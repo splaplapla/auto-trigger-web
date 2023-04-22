@@ -16,4 +16,9 @@ class ProconBypassManTcpClient
     # @socket.close # 接続をキャッシュしているのでcloseしない
     true
   end
+
+  # @return [void]
+  def close
+    @socket.close
+  end
 end
