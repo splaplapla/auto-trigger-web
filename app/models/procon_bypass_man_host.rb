@@ -4,7 +4,7 @@ class ProconBypassManHost < ApplicationRecord
   cattr_accessor :client_table
 
   def send_command(buttons: )
-    Timeout.timeout(3) do
+    Timeout.timeout(1) do
       client.send_command(buttons: buttons)
     end
   rescue IOError, Errno::EPIPE
