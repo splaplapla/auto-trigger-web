@@ -60,6 +60,7 @@
 
 <ul>
   <li>PBMへ入力を行う</li>
+  <!--
   <ul>
     <li>
       <div style='display: none'>
@@ -70,6 +71,12 @@
     <li>
       結果: <span id='single-command-result'></span>
     </li>
+  </ul>
+  -->
+  <ul>
+    <li>
+    <%= Procon::BUTTONS.map { |x| link_to(x, procon_bypass_man_remote_single_commands_path(buttons: [x], format: :js), class: 'button-like', data: { remote: true, remote_single_command: x }, method: :post) }.join.html_safe %>
+    </il>
   </ul>
   <li><%= link_to '画面キャプチャを行う', captured_images_path, method: :post, data: { remote: true } %></li>
   <ul>

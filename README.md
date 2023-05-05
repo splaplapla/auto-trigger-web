@@ -7,22 +7,24 @@
 ## 必要なソフトウェア
 * OS
     * MacOS
-      * Windowsでは動かないかも
+        * Windowsでは動かないかも
 * ruby3.x
 * sqlite3
 * OpenCV 3.x
-    * `brew install opencv@3`
+    * ropencvのインストールについては https://github.com/splaplapla/procon_bypass_man_commander-splatoon3 を参照してください
 
 ## 使い方
 * 起動方法
-    * `bin/start_server`
+    * `bin/dev`
 * 画面
-    * TODO
+    * `PBM host`を登録する
+    * 送信先に設定する
+    * キャプチャデバイスのインデックスに0を設定する
+    * `画面キャプチャと画像解析を開始する`をクリックする
+        * これによってキャプチャと画像解析をし、対象が画面に入るとPBMに特定の入力を行います
 
 ## 開発
 ### インストール
-* bundle install
-* bin/rails db:create db:migrate
 * bin/dev
 
 ## TIPS
